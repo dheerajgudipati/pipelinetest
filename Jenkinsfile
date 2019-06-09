@@ -1,12 +1,17 @@
 pipeline {
     agent any
+    
+    stages {
+    
+        stage ('Compile Stage') {
 
-    stage ('Build') { 
-    withMaven(
-        // Maven installation declared in the Jenkins "Global Tool Configuration"
-        maven: 'mvn',
-        
-      // Run the maven build
-      sh "mvn clean install"
-  }
+            steps {
+                withMaven(maven : 'maven 3.6.1') {
+                    sh 'mvn clean compile'
+                }
+            }
+        }
+
+    }
+
 }

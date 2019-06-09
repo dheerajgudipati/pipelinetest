@@ -15,7 +15,7 @@ pipeline {
         stage ('Deploy') {
 
             steps {
-                sh "scp target/*.war 54.186.32.14:/opt/apache-tomcat-8.5.41/webapps"
+                sh "scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null target/*.war 54.186.32.14:/opt/apache-tomcat-8.5.41/webapps"
             }
         }
     }

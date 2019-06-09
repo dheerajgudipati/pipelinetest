@@ -7,6 +7,6 @@ pipeline {
         maven: 'mvn',
         
       // Run the maven build
-      sh "mvn -U clean install"
+      sh "mvn clean install"
   }
 }
